@@ -18,5 +18,10 @@ func main() {
 		os.Exit(1)
 	}
 
-	fmt.Println(res)
+	// make a byte slice with n number of empty elements in side of it
+	bs := make([]byte, 99999)
+	// takes body and puts inside byte slice
+	res.Body.Read(bs)
+	// this displays response body as a string (response body is the HTML of the Google home page)
+	fmt.Println(string(bs))
 }
